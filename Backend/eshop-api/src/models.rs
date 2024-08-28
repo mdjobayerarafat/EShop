@@ -16,3 +16,9 @@ pub struct NewUser {
     pub username: String,
     pub password: String,
 }
+
+#[derive(Queryable, Serialize, Deserialize)]
+pub struct Category {
+    pub id: i32,
+    pub name: String,
+}

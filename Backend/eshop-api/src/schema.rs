@@ -35,3 +35,13 @@ diesel::table! {
         created_at -> Timestamp,
     }
 }
+diesel::joinable!(products -> categories (category_id));
+diesel::joinable!(orders -> users (user_id));
+diesel::joinable!(orders -> products (product_id));
+
+diesel::allow_tables_to_appear_in_same_query!(
+    users,
+    categories,
+    products,
+    orders,
+);

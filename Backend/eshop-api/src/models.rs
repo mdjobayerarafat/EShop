@@ -38,3 +38,11 @@ pub struct Product {
     pub category_id: i32,
 }
 
+#[derive(Insertable, Deserialize)]
+#[diesel(table_name = products)]
+pub struct NewProduct {
+    pub name: String,
+    pub description: String,
+    pub price: f64,
+    pub category_id: i32,
+}

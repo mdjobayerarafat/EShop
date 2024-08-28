@@ -38,29 +38,3 @@ pub struct Product {
     pub category_id: i32,
 }
 
-#[derive(Insertable, Deserialize)]
-#[diesel(table_name = products)]
-pub struct NewProduct {
-    pub name: String,
-    pub description: String,
-    pub price: f64,
-    pub category_id: i32,
-}
-#[derive(Queryabe, Serialize, Deserialize)]
-pub struct Order {
-    pub id: i32,
-    pub user_id: i32,
-    pub product_id: i32,
-    pub quantity: i32,
-    pub total_price: f64,
-    pub created_at: String,
-}
-
-#[derive(Insertable, Deserialize)]
-#[diesel(table_name = orders)]
-pub struct NewOrder {
-    pub user_id: i32,
-    pub product_id: i32,
-    pub quantity: i32,
-    pub total_price: f64,
-}

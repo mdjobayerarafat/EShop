@@ -29,3 +29,12 @@ pub struct NewCategory {
     pub name: String,
 }
 
+#[derive(Queryable, Serialize, Deserialize)]
+pub struct Product {
+    pub id: i32,
+    pub name: String,
+    pub description: String,
+    pub price: f64,
+    pub category_id: i32,
+}
+

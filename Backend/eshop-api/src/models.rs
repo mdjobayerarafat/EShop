@@ -8,3 +8,11 @@ pub struct User {
     pub password_hash: String,
     pub is_admin: bool,
 }
+
+
+#[derive(Insertable, Deserialize)]
+#[diesel(table_name = users)]
+pub struct NewUser {
+    pub username: String,
+    pub password: String,
+}
